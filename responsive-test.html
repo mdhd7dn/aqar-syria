@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار التصميم المتجاوب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .test-header {
+            background: #82b85c;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .device-frame {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .device-label {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .device-viewport {
+            background: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .responsive-test {
+            width: 100%;
+            background: linear-gradient(135deg, #82b85c 0%, #5a8c3a 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .breakpoint-info {
+            background: #f9f9f9;
+            border-right: 4px solid #82b85c;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .breakpoint-info h3 {
+            color: #82b85c;
+            margin-bottom: 8px;
+        }
+
+        .breakpoint-info p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .test-links {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .test-links h2 {
+            color: #82b85c;
+            margin-bottom: 15px;
+        }
+
+        .test-links a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .test-links a:hover {
+            background: #0056b3;
+        }
+
+        .desktop-check {
+            background: #e8f5e9;
+            border-right: 4px solid #4caf50;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .mobile-check {
+            background: #fff3e0;
+            border-right: 4px solid #ff9800;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .device-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .test-header {
+                padding: 15px;
+            }
+
+            .test-links a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 اختبار التصميم المتجاوب</h1>
+            <p>جرّب الموقع على أجهزة مختلفة</p>
+        </div>
+
+        <div class="test-links">
+            <h2>🔗 الروابط الرئيسية</h2>
+            <a href="index.html">الصفحة الرئيسية</a>
+            <a href="add-property.html">إضافة عقار</a>
+            <a href="dailyrent.html">الإيجار اليومي</a>
+        </div>
+
+        <div class="breakpoint-info">
+            <h3>📱 نقاط التوقف (Breakpoints)</h3>
+            <p>الموقع متوافق مع جميع أحجام الشاشات:</p>
+            <ul style="margin-top: 10px; margin-right: 20px;">
+                <li>✅ <strong>Desktop:</strong> 1024px فما فوق</li>
+                <li>✅ <strong>Tablet:</strong> 768px - 1024px</li>
+                <li>✅ <strong>Mobile:</strong> 480px - 768px</li>
+                <li>✅ <strong>Small Mobile:</strong> أقل من 480px</li>
+            </ul>
+        </div>
+
+        <div class="desktop-check">
+            <h3>✅ تحسينات سطح المكتب (Desktop)</h3>
+            <p>• تخطيط متعدد الأعمدة<br>
+            • شبكة خصائص 3 أعمدة<br>
+            • أيقونات كبيرة وواضحة<br>
+            • قوائم أفقية</p>
+        </div>
+
+        <div class="mobile-check">
+            <h3>✅ تحسينات الجوال (Mobile)</h3>
+            <p>• نص أصغر لتوفير المساحة<br>
+            • أزرار أكبر لللمس (48px)<br>
+            • عمود واحد فقط<br>
+            • تخفيف الحشو والفجوات<br>
+            • صور مضغوطة أفقياً</p>
+        </div>
+
+        <div class="device-grid">
+            <div class="device-frame">
+                <div class="device-label">💻 سطح المكتب (1024px+)</div>
+                <div class="device-viewport" style="width: 100%; height: 300px;">
+                    <div class="responsive-test">
+                        <h3>Desktop View</h3>
+                        <p>Grid: 3 Columns</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="device-frame">
+                <div class="device-label">📱 قرص (768px)</div>
+                <div class="device-viewport" style="width: 100%; height: 300px;">
+                    <div class="responsive-test">
+                        <h3>Tablet View</h3>
+                        <p>Grid: 2 Columns</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="device-frame">
+                <div class="device-label">📱 هاتف (480px)</div>
+                <div class="device-viewport" style="width: 100%; height: 300px;">
+                    <div class="responsive-test">
+                        <h3>Mobile View</h3>
+                        <p>Grid: 1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="breakpoint-info">
+            <h3>🧪 كيفية الاختبار</h3>
+            <p><strong>استخدم أدوات Chrome DevTools:</strong><br>
+            1. اضغط F12 لفتح أدوات التطوير<br>
+            2. اضغط Ctrl+Shift+M لتشغيل الجوال<br>
+            3. جرّب أحجام مختلفة: 480px, 768px, 1024px<br>
+            4. تحقق من أن جميع العناصر مرئية وسهلة الوصول</p>
+        </div>
+
+        <div class="breakpoint-info">
+            <h3>✨ الميزات المُضافة</h3>
+            <p>• زيادة حجم الخط على الجوال (16px+)<br>
+            • تكبير الأزرار لسهولة اللمس<br>
+            • إعادة ترتيب العناصر تلقائياً<br>
+            • تقليل الحشو على الجوال<br>
+            • شبكة تتكيف مع حجم الشاشة</p>
+        </div>
+    </div>
+</body>
+</html>

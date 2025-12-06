@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الاختبار - جميع الصفحات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #82b85c 0%, #5a8c3a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: #82b85c;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .page-card:hover {
+            border-color: #82b85c;
+            background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(130, 184, 92, 0.2);
+        }
+
+        .page-icon {
+            font-size: 32px;
+            color: #82b85c;
+            margin-bottom: 10px;
+        }
+
+        .page-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .page-desc {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .features {
+            background: #f9f9f9;
+            border-right: 4px solid #82b85c;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .features h3 {
+            color: #82b85c;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .features ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .features li {
+            color: #666;
+            font-size: 13px;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #82b85c;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .breakpoints {
+            background: #e8f5e9;
+            border-right: 4px solid #4caf50;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .breakpoints h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .breakpoints-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .breakpoint-item {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .breakpoint-label {
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: 2px;
+        }
+
+        .breakpoint-width {
+            color: #999;
+            font-size: 11px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .pages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-card {
+                min-height: 120px;
+            }
+
+            .breakpoints-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .header {
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .logo {
+                font-size: 40px;
+            }
+
+            .page-card {
+                padding: 15px;
+                min-height: 100px;
+            }
+
+            .page-icon {
+                font-size: 28px;
+            }
+
+            .page-name {
+                font-size: 13px;
+            }
+
+            .page-desc {
+                font-size: 10px;
+            }
+
+            .features {
+                padding: 15px;
+            }
+
+            .features h3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🏠</div>
+            <h1>نظام إدارة العقارات</h1>
+            <p>اختبر التصميم على جميع الأجهزة</p>
+            <div class="status-badge">✅ متجاوب وجاهز</div>
+        </div>
+
+        <div class="breakpoints">
+            <h3>📱 نقاط التوقف المدعومة</h3>
+            <div class="breakpoints-grid">
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">💻 Desktop</div>
+                    <div class="breakpoint-width">1024px+</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">📱 Tablet</div>
+                    <div class="breakpoint-width">768px</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">📱 Mobile</div>
+                    <div class="breakpoint-width">600px</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">📱 Small</div>
+                    <div class="breakpoint-width">480px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>✨ ميزات التجاوب</h3>
+            <ul>
+                <li>شبكات تتكيف مع حجم الشاشة</li>
+                <li>أزرار كبيرة وسهلة اللمس</li>
+                <li>نصوص واضحة وقابلة للقراءة</li>
+                <li>لا توجد تمرير أفقي</li>
+                <li>صور محسّنة لكل جهاز</li>
+                <li>حوارات مدفوعة بالكامل</li>
+            </ul>
+        </div>
+
+        <div class="pages-grid">
+            <a href="index.html" class="page-card" title="انتقل إلى الصفحة الرئيسية">
+                <div class="page-icon">🏠</div>
+                <div class="page-name">الصفحة الرئيسية</div>
+                <div class="page-desc">الفهرس والخصائص</div>
+            </a>
+
+            <a href="add-property.html" class="page-card" title="انتقل إلى إضافة عقار">
+                <div class="page-icon">➕</div>
+                <div class="page-name">إضافة عقار</div>
+                <div class="page-desc">نموذج 3 خطوات</div>
+            </a>
+
+            <a href="dailyrent.html" class="page-card" title="انتقل إلى الإيجار اليومي">
+                <div class="page-icon">📅</div>
+                <div class="page-name">الإيجار اليومي</div>
+                <div class="page-desc">قائمة الإيجارات</div>
+            </a>
+
+            <a href="responsive-test.html" class="page-card" title="اختبر التصميم">
+                <div class="page-icon">🧪</div>
+                <div class="page-name">اختبار التجاوب</div>
+                <div class="page-desc">معلومات البريكبوينتس</div>
+            </a>
+        </div>
+
+        <div style="background: #fff3cd; border-right: 4px solid #ffc107; padding: 15px; border-radius: 6px; text-align: center;">
+            <p style="color: #856404; font-size: 12px; margin: 0;">
+                <strong>💡 نصيحة:</strong> استخدم أدوات Chrome DevTools (F12) لاختبار جميع أحجام الشاشة
+            </p>
+        </div>
+    </div>
+</body>
+</html>

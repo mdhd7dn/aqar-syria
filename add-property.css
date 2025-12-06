@@ -889,34 +889,71 @@ body {
 }
 
 /* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 90%;
+        max-width: 600px;
+    }
+    
+    .property-types-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+    
+    .payment-methods {
+        gap: 12px;
+    }
+}
+
 @media (max-width: 768px) {
+    .add-property-modal {
+        padding: 20px;
+    }
+
     .modal-content {
         width: 95%;
         max-width: 100%;
         max-height: 95vh;
+        border-radius: 10px;
     }
 
     .modal-header {
         padding: 16px;
+        border-radius: 10px 10px 0 0;
     }
 
     .modal-header h2 {
         font-size: 18px;
+        font-weight: 600;
+    }
+
+    .close-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
     }
 
     .progress-bar {
-        padding: 16px;
+        padding: 12px;
         gap: 4px;
     }
 
+    .progress-step {
+        width: 40px;
+        height: 40px;
+    }
+
+    .step-number {
+        font-size: 12px;
+    }
+
     .step-label {
-        font-size: 10px;
-        max-width: 50px;
+        font-size: 9px;
+        max-width: 45px;
     }
 
     .progress-line {
-        min-width: 10px;
-        margin: 0 4px;
+        min-width: 15px;
+        height: 3px;
     }
 
     .modal-body {
@@ -924,7 +961,12 @@ body {
     }
 
     .form-section {
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+    }
+
+    .form-section h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
     }
 
     .property-types-grid {
@@ -932,34 +974,132 @@ body {
         gap: 10px;
     }
 
+    .property-type-card {
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .type-icon {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .property-type-card span {
+        font-size: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
-    .modal-footer {
-        flex-direction: column;
+    .upload-area {
+        padding: 20px;
+        border-radius: 6px;
     }
 
-    .btn {
-        width: 100%;
+    .upload-icon {
+        font-size: 32px;
+    }
+
+    .images-preview {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 10px;
+    }
+
+    .image-preview {
+        width: 70px;
+        height: 70px;
     }
 
     .payment-methods {
-        gap: 10px;
+        gap: 12px;
+    }
+
+    .payment-method-card {
+        padding: 12px;
+        border-radius: 8px;
     }
 
     .method-header {
         flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .method-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .method-info h4 {
+        font-size: 14px;
+    }
+
+    .method-info p {
+        font-size: 12px;
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .checkbox-group {
+        font-size: 12px;
+        gap: 8px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .modal-content {
-        border-radius: 8px;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .progress-bar {
+        padding: 10px;
+        gap: 2px;
+    }
+
+    .progress-step {
+        width: 35px;
+        height: 35px;
+    }
+
+    .step-number {
+        font-size: 11px;
+    }
+
+    .step-label {
+        display: none;
     }
 
     .property-types-grid {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
 
@@ -972,13 +1112,221 @@ body {
     }
 
     .images-preview {
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+    }
+
+    .image-preview {
+        width: 90px;
+        height: 90px;
+    }
+
+    .payment-methods {
+        gap: 10px;
+    }
+
+    .payment-method-card {
+        padding: 10px;
+    }
+
+    .method-header {
+        padding: 10px;
+    }
+
+    .method-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-header {
+        padding: 12px;
+        border-radius: 0;
+    }
+
+    .modal-header h2 {
+        font-size: 16px;
+    }
+
+    .close-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+    }
+
+    .progress-bar {
+        padding: 8px;
+        gap: 2px;
+    }
+
+    .progress-step {
+        width: 32px;
+        height: 32px;
+    }
+
+    .step-number {
+        font-size: 10px;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+    }
+
+    .modal-body {
+        padding: 12px;
+    }
+
+    .form-section h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .property-types-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .property-type-card {
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    .type-icon {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .property-type-card span {
+        font-size: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        margin-bottom: 4px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
+        padding: 8px;
         font-size: 16px; /* لتجنب zoom على الـ mobile */
+    }
+
+    .form-row {
+        gap: 10px;
+    }
+
+    .upload-area {
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .upload-icon {
+        font-size: 28px;
+    }
+
+    .upload-text {
+        font-size: 12px;
+    }
+
+    .upload-subtext {
+        font-size: 10px;
+    }
+
+    .images-preview {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .image-preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .payment-methods {
+        gap: 8px;
+    }
+
+    .payment-method-card {
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .method-header {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .method-logo {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .method-info h4 {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .method-info p {
+        font-size: 10px;
+    }
+
+    .radio-btn {
+        width: 16px;
+        height: 16px;
+    }
+
+    .modal-footer {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .checkbox-group {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    /* Dialog Responsive */
+    .payment-dialog {
+        padding: 20px;
+    }
+
+    .dialog-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .dialog-header {
+        padding: 12px;
+    }
+
+    .dialog-header h3 {
+        font-size: 16px;
+    }
+
+    .dialog-body {
+        padding: 12px;
+    }
+
+    .dialog-footer {
+        padding: 12px;
+        gap: 8px;
     }
 }
