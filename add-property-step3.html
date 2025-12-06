@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة عقار - التأكيد وطرق الدفع</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="add-property.css">
+</head>
+<body>
+    <div class="add-property-modal" id="addPropertyModal">
+        <div class="modal-content">
+            <!-- رأس النموذج -->
+            <div class="modal-header">
+                <h2>إضافة عقار جديد</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+
+            <!-- شريط التقدم -->
+            <div class="progress-bar">
+                <div class="progress-step completed">
+                    <span class="step-number">✓</span>
+                    <span class="step-label">نوع العقار</span>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step completed">
+                    <span class="step-number">✓</span>
+                    <span class="step-label">البيانات والسعر</span>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step active">
+                    <span class="step-number">3</span>
+                    <span class="step-label">التأكيد</span>
+                </div>
+            </div>
+
+            <!-- محتوى الخطوة الثالثة -->
+            <div class="modal-body">
+                <!-- ملخص العقار -->
+                <div class="form-section">
+                    <h3>ملخص العقار</h3>
+                    <div class="summary-card">
+                        <div class="summary-item">
+                            <span class="label">نوع العقار:</span>
+                            <span class="value" id="summaryType">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">العنوان:</span>
+                            <span class="value" id="summaryTitle">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">المدينة/الحي:</span>
+                            <span class="value" id="summaryLocation">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">السعر:</span>
+                            <span class="value price" id="summaryPrice">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">صاحب العقار:</span>
+                            <span class="value" id="summaryOwner">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- طرق الدفع -->
+                <div class="form-section">
+                    <h3>طريقة الدفع</h3>
+                    <p class="info-text">اختر طريقة الدفع المفضلة لتفعيل إعلانك</p>
+
+                    <div class="payment-methods">
+                        <!-- Shaam Cash -->
+                        <div class="payment-method-card" data-method="shaam-cash">
+                            <div class="method-header">
+                                <div class="method-logo">
+                                    <div class="logo-placeholder">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                </div>
+                                <div class="method-info">
+                                    <h4>محفظة الشام كاش</h4>
+                                    <p>دفع فوري آمن وسهل</p>
+                                </div>
+                                <div class="radio-btn">
+                                    <input type="radio" name="paymentMethod" value="shaam-cash" id="shaammCash">
+                                </div>
+                            </div>
+                            <div class="method-details">
+                                <label for="shaammCash" class="upload-payment">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    اسحب صورة الحساب أو انقر هنا
+                                    <input type="file" id="shaammImage" accept="image/*" style="display: none;">
+                                </label>
+                                <div id="shaammPreview" class="payment-preview"></div>
+                            </div>
+                        </div>
+
+                        <!-- PayPal -->
+                        <div class="payment-method-card" data-method="paypal">
+                            <div class="method-header">
+                                <div class="method-logo">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>PayPal</h4>
+                                    <p>محفظة رقمية عالمية</p>
+                                </div>
+                                <div class="radio-btn">
+                                    <input type="radio" name="paymentMethod" value="paypal" id="paypalMethod">
+                                </div>
+                            </div>
+                            <div class="method-details">
+                                <p>سيتم التحويل إلى موقع PayPal للدفع</p>
+                            </div>
+                        </div>
+
+                        <!-- Bank Transfer -->
+                        <div class="payment-method-card" data-method="bank-transfer">
+                            <div class="method-header">
+                                <div class="method-logo">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>تحويل بنكي</h4>
+                                    <p>دفع آمن عبر البنك</p>
+                                </div>
+                                <div class="radio-btn">
+                                    <input type="radio" name="paymentMethod" value="bank-transfer" id="bankTransfer">
+                                </div>
+                            </div>
+                            <div class="method-details">
+                                <p>سيتم إرسال تفاصيل البنك لبريدك الإلكتروني</p>
+                            </div>
+                        </div>
+
+                        <!-- Crypto -->
+                        <div class="payment-method-card" data-method="crypto">
+                            <div class="method-header">
+                                <div class="method-logo">
+                                    <i class="fab fa-bitcoin"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>العملات الرقمية</h4>
+                                    <p>دفع باستخدام البيتكوين أو الإيثيريوم</p>
+                                </div>
+                                <div class="radio-btn">
+                                    <input type="radio" name="paymentMethod" value="crypto" id="crypto">
+                                </div>
+                            </div>
+                            <div class="method-details">
+                                <p>سيتم تزويدك بعنوان المحفظة للدفع</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- شروط وأحكام -->
+                <div class="form-section">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termsCheckbox">
+                        <label for="termsCheckbox">
+                            أوافق على <a href="#" class="link">شروط وأحكام الاستخدام</a> و<a href="#" class="link">سياسة الخصوصية</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أزرار التنقل -->
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="prevBtn">السابق</button>
+                <button class="btn btn-secondary" id="cancelBtn">إلغاء</button>
+                <button class="btn btn-success" id="submitBtn" disabled>
+                    <i class="fas fa-check"></i> تأكيد وإضافة العقار
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة التأكيد النهائية -->
+    <div class="success-modal" id="successModal" style="display: none;">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>تم إضافة العقار بنجاح!</h2>
+            <p>سيتم مراجعة إعلانك خلال 24 ساعة قبل نشره على الموقع</p>
+            <div class="success-details">
+                <p><strong>رقم الإعلان:</strong> <span id="listingId">#12345</span></p>
+                <p>ستتلقى بريداً إلكترونياً برابط متابعة الإعلان</p>
+            </div>
+            <button class="btn btn-primary" id="closeSuccessBtn">حسناً</button>
+        </div>
+    </div>
+
+    <script src="add-property.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة عقار - البيانات والسعر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="add-property.css">
+</head>
+<body>
+    <div class="add-property-modal" id="addPropertyModal">
+        <div class="modal-content">
+            <!-- رأس النموذج -->
+            <div class="modal-header">
+                <h2>إضافة عقار جديد</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+
+            <!-- شريط التقدم -->
+            <div class="progress-bar">
+                <div class="progress-step completed">
+                    <span class="step-number">✓</span>
+                    <span class="step-label">نوع العقار</span>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step active">
+                    <span class="step-number">2</span>
+                    <span class="step-label">البيانات والسعر</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <span class="step-number">3</span>
+                    <span class="step-label">التأكيد</span>
+                </div>
+            </div>
+
+            <!-- محتوى الخطوة الثانية -->
+            <div class="modal-body">
+                <form id="propertyForm">
+                    <!-- بيانات العقار -->
+                    <div class="form-section">
+                        <h3>تفاصيل العقار</h3>
+                        <div class="form-group">
+                            <label>عنوان العقار *</label>
+                            <input type="text" id="propertyTitle" placeholder="مثال: شقة فاخرة في دمشق" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>المدينة *</label>
+                                <select id="city" required>
+                                    <option value="">اختر المدينة</option>
+                                    <option value="damascus">دمشق</option>
+                                    <option value="aleppo">حلب</option>
+                                    <option value="homs">حمص</option>
+                                    <option value="hama">حماة</option>
+                                    <option value="latakia">اللاذقية</option>
+                                    <option value="tartous">طرطوس</option>
+                                    <option value="idlib">إدلب</option>
+                                    <option value="raqqa">الرقة</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>المنطقة/الحي *</label>
+                                <input type="text" id="area" placeholder="مثال: المنطقة الشرقية" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>الوصف التفصيلي</label>
+                            <textarea id="description" placeholder="صف العقار بالتفاصيل..." rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- بيانات السعر -->
+                    <div class="form-section">
+                        <h3>السعر والتفاصيل المالية</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>السعر *</label>
+                                <div class="price-input">
+                                    <input type="number" id="price" placeholder="0" min="0" required>
+                                    <span class="currency">ل.س</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>نوع الإيجار (إن كان إيجار)</label>
+                                <select id="rentalType">
+                                    <option value="">لا ينطبق</option>
+                                    <option value="monthly">شهري</option>
+                                    <option value="yearly">سنوي</option>
+                                    <option value="daily">يومي</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>المساحة (م²)</label>
+                                <input type="number" id="area-size" placeholder="0" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>عدد الغرف</label>
+                                <input type="number" id="rooms" placeholder="0" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>عدد الحمامات</label>
+                                <input type="number" id="bathrooms" placeholder="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- بيانات المالك -->
+                    <div class="form-section">
+                        <h3>بيانات المالك/الوسيط</h3>
+                        <div class="form-group">
+                            <label>الاسم الكامل *</label>
+                            <input type="text" id="ownerName" placeholder="اسمك الكامل" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>رقم التواصل *</label>
+                                <input type="tel" id="phone" placeholder="0955112233" required>
+                            </div>
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" id="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>عنوان المكتب/العنوان</label>
+                            <input type="text" id="officeAddress" placeholder="عنوان مكتبك أو عنوانك">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- أزرار التنقل -->
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="prevBtn">السابق</button>
+                <button class="btn btn-secondary" id="cancelBtn">إلغاء</button>
+                <button class="btn btn-primary" id="nextBtn">التالي</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="add-property.js"></script>
+</body>
+</html>

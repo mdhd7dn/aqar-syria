@@ -1,0 +1,988 @@
+/* Property Detail Section Styles */
+.property-detail-section {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    font-family: 'Cairo', sans-serif;
+}
+
+.property-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    direction: rtl;
+}
+
+.breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-nav a:hover {
+    color: #0056b3;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    margin: 0 5px;
+}
+
+/* Property Title */
+.property-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Main Property Content */
+.property-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Image Gallery */
+.image-gallery {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-image-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+}
+
+/* Action Buttons on Main Image */
+.image-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.action-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.action-btn.share {
+    color: #007bff;
+}
+
+.action-btn.favorite {
+    color: #dc3545;
+}
+
+.action-btn.report {
+    color: #6c757d;
+}
+
+/* Image Counter */
+.image-counter {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 15px;
+    background: white;
+}
+
+.thumbnail {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.thumbnail.active {
+    border-color: #007bff;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Property Info Sidebar */
+.property-info {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.price-section {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 5px;
+}
+
+.price-period {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Property Details */
+.property-details {
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.contact-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.3);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp-btn:hover {
+    box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .property-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .property-info {
+        position: static;
+    }
+    
+    .main-image-container {
+        height: 300px;
+    }
+    
+    .thumbnail-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .breadcrumb-nav {
+        font-size: 12px;
+        justify-content: center;
+    }
+    
+    .property-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .property-container {
+        padding: 0 15px;
+    }
+    
+    .thumbnail-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .image-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .action-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Animation for image transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.main-image.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover effects */
+.property-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.image-gallery:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+/*
+ * كود لتوسيط محتوى صفحة تفاصيل العقار
+ */
+
+/* الخطوة 1: توسيط الحاوية الرئيسية للعقار */
+.property-detail-section {
+    width: 100%; /* تأكد من أن الحاوية تأخذ العرض الكامل */
+    display: flex; /* استخدم Flexbox للتوسيط */
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    padding: 20px 0; /* إضافة بعض الهوامش العلوية والسفلية */
+}
+
+/* الخطوة 2: تحديد عرض المحتوى الداخلي */
+.property-container {
+    width: 100%;
+    max-width: 1200px; /* يمكنك تعديل هذا الرقم ليناسب تصميمك */
+    /* هذا يمنع المحتوى من التمدد بشكل كبير على الشاشات الواسعة */
+}
+
+/* الخطوة 3: توسيط النصوص داخل الحاوية */
+.breadcrumb-nav,
+.property-title {
+    text-align: center; /* توسيط النص داخل هذه العناصر */
+}
+
+/* (اختياري) تحسين مظهر شريط التنقل ليتناسب مع التوسيط */
+.breadcrumb-nav {
+    display: flex;
+    justify-content: center; /* توسيط الروابط داخل الشريط */
+    align-items: center;
+    gap: 8px; /* مسافة بين الروابط */
+    margin-bottom: 16px; /* مسافة تحت الشريط */
+}
+/*
+ * كود إضافي لتوسيط معرض الصور والتفاصيل
+ */
+
+/* الخطوة 1: تعديل الحاوية الرئيسية للمحتوى */
+.property-content {
+    display: flex; /* استخدام Flexbox لترتيب العناصر */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال لسطر جديد على الشاشات الصغيرة */
+    justify-content: center; /* !! أهم خطوة: توسيط العناصر أفقيًا !! */
+    gap: 20px; /* إضافة مسافة بين معرض الصور وقسم التفاصيل */
+    margin-top: 20px; /* إضافة مسافة فوق المحتوى */
+}
+
+/* الخطوة 2: تحديد عرض كل جزء (الصور والتفاصيل) */
+.image-gallery {
+    flex: 1 1 600px; /* السماح له بالتمدد والانكماش، مع عرض أساسي 600 بكسل */
+    max-width: 700px; /* تحديد عرض أقصى لمعرض الصور */
+}
+
+.property-info {
+    flex: 1 1 300px; /* السماح له بالتمدد والانكماش، مع عرض أساسي 300 بكسل */
+    max-width: 400px; /* تحديد عرض أقصى لقسم التفاصيل */
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    min-height: 100vh;
+}
+/* Header Section */
+.booking-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    /* -- ✅ الأسطر الجديدة التي يجب إضافتها -- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* -- نهاية الإضافة -- */
+}
+
+
+.booking-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.property-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.property-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.property-badge i {
+    font-size: 12px;
+}
+
+.property-description {
+    max-width: 800px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Main Content */
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Calendar Section */
+.calendar-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.calendar-grid {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.calendar-header-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f8f9fa;
+}
+
+.day-header {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+    border-right: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.day-header:last-child {
+    border-right: none;
+}
+
+.calendar-body {
+    background: white;
+}
+
+.calendar-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.calendar-row:last-child {
+    border-bottom: none;
+}
+
+.day-cell {
+    padding: 15px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-cell:last-child {
+    border-right: none;
+}
+
+.day-cell:hover {
+    background-color: #f0f8ff;
+}
+
+.day-cell.other-month {
+    color: #ccc;
+    background-color: #f9f9f9;
+}
+
+.day-cell.available {
+    color: #dc3545;
+    font-weight: 600;
+    background-color: #fff5f5;
+}
+
+.day-cell.available:hover {
+    background-color: #ffe6e6;
+}
+
+.book-unit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+    margin-bottom: 15px;
+}
+
+.book-unit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.3);
+}
+
+.report-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.report-link:hover {
+    color: #dc3545;
+}
+
+/* Details Section */
+.details-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.details-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-label i {
+    font-size: 16px;
+    color: #007bff;
+    width: 20px;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: 600;
+}
+
+.features-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.features-list {
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: #28a745;
+    font-weight: 500;
+}
+
+.feature-item i {
+    font-size: 14px;
+}
+
+.unit-rules-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.unit-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.rule-item:last-child {
+    border-bottom: none;
+}
+
+.rule-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.rule-value {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .details-section {
+        position: static;
+    }
+    
+    .booking-container {
+        padding: 15px;
+    }
+    
+    .calendar-section {
+        padding: 20px;
+    }
+    
+    .details-section {
+        padding: 20px;
+    }
+    
+    .day-cell {
+        padding: 10px;
+        min-height: 40px;
+        font-size: 14px;
+    }
+    
+    .booking-title {
+        font-size: 20px;
+    }
+    
+    .property-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-header-row,
+    .calendar-row {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .day-cell {
+        padding: 8px;
+        min-height: 35px;
+        font-size: 12px;
+    }
+    
+    .day-header {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .details-grid {
+        gap: 10px;
+    }
+    
+    .detail-item {
+        padding: 8px 0;
+    }
+    
+    .detail-label {
+        font-size: 14px;
+    }
+    
+    .detail-value {
+        font-size: 14px;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calendar-section,
+.details-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.day-cell:hover {
+    transform: scale(1.05);
+}
+
+.book-unit-btn:active {
+    transform: translateY(0);
+}
+
+/* Hover Effects */
+.detail-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    margin: 0 -10px;
+    padding: 12px 10px;
+}
+
+.rule-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    margin: 0 -10px;
+    padding: 10px;
+}
+
+.feature-item:hover {
+    background-color: #f0f8f0;
+    border-radius: 6px;
+    margin: 0 -10px;
+    padding: 8px 10px;
+}
+
+.page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 1. بانر الخصم (التصميم الجديد) --- */
+.discount-banner {
+    background-color: #1a202c; /* لون خلفية داكن */
+    color: white;
+    border-radius: 10px;
+    display: flex; /* ✅ استخدام Flexbox لتقسيم البانر */
+    overflow: hidden; /* لإخفاء أي زوائد من الصورة */
+    align-items: stretch; /* لجعل الصورة والنص بنفس الارتفاع */
+}
+
+.banner-image {
+    flex: 0 0 250px; /* ✅ تحديد عرض ثابت لجزء الصورة */
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لجعل الصورة تملأ المساحة بشكل صحيح */
+    display: block;
+}
+
+.banner-content {
+    flex-grow: 1; /* ✅ جعل جزء النص يأخذ المساحة المتبقية */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* توسيط المحتوى عمودياً */
+    align-items: flex-start; /* محاذاة المحتوى لليمين */
+}
+
+.discount-banner h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.discount-banner p {
+    margin: 5px 0 15px;
+    font-size: 16px;
+    color: #a0aec0; /* لون رمادي فاتح */
+}
+
+.promo-code {
+    background-color: #2d3748; /* لون خلفية أغمق قليلاً */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.promo-code .code {
+    color: #4ade80;
+    font-weight: 700;
+}
+
+/* --- 2. قسم الخريطة --- */
+.map-section {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+/* --- 3. قسم معلومات الإعلان --- */
+.info-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+}
+
+.info-section h4 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #666;
+}
+
+.info-item strong {
+    color: #111;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.license-number {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+/* --- 4. أزرار التنقل --- */
+.ad-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+}

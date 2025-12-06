@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 2. الكلاس المسؤول عن توسيط النموذج --- */
+/* هذا الكلاس يوضع على حاوية <main> التي تلف النموذج */
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 15px; /* هوامش لإعطاء مساحة تنفس */
+    min-height: 70vh;   /* ارتفاع مرن ليأخذ معظم الشاشة */
+    font-family: 'Cairo', sans-serif; /* يمكنك تغيير الخط إذا أردت */
+}
+
+/* --- 3. تنسيق الحاوية الرئيسية للنموذج --- */
+.form-container {
+    width: 100%;
+    max-width: 400px; /* عرض النموذج الأقصى */
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* شريط ملون أعلى النموذج للزينة */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #28a745);
+}
+
+/* --- 4. تنسيق عنوان النموذج --- */
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* --- 5. تنسيق أزرار التبديل (دخول / إنشاء حساب) --- */
+.toggle-buttons {
+    display: flex;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 30px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.toggle-btn:hover:not(.active) {
+    background-color: #e4e6e9;
+}
+
+/* --- 6. إخفاء وإظهار النماذج --- */
+.form {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.form.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 7. تنسيق حقول الإدخال --- */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f7f7f7;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    left: 12px; /* 'left' لأن الصفحة باللغة العربية (rtl) */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* --- 8. تنسيق زر الإرسال الرئيسي --- */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* --- 9. تنسيق رابط "هل نسيت كلمة المرور؟" --- */
+.forgot-password {
+    display: block;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+}

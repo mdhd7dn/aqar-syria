@@ -1,0 +1,455 @@
+/* تأكد من أن الخطوط تتماشى مع الهيدر الموجود */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* المحتوى الرئيسي - يبدأ من تحت الهيدر الموجود لديك */
+.main-content {
+    padding: 30px 0;
+    background-color: #f8f9fa;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif; /* نفس خط الهيدر */
+    margin-top: 0; /* تأكد من عدم وجود مسافة فوقية */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #6c757d;
+    font-family: 'Cairo', sans-serif;
+}
+
+.separator {
+    font-size: 18px;
+    color: #6c757d;
+}
+
+/* Filter Tabs - تتماشى مع ألوان الهيدر */
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 5px;
+}
+
+.filter-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-tab {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    color: #6c757d;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+}
+
+.filter-tab:hover {
+    background: #e9ecef;
+    color: #495057;
+    transform: translateY(-1px);
+}
+
+.filter-tab.active {
+    background: #5cb85c; /* نفس لون الشعار في الهيدر */
+    color: white;
+    border-color: #5cb85c;
+    box-shadow: 0 2px 8px rgba(92, 184, 92, 0.3);
+}
+
+/* Date and Location Filter */
+.date-location-filter {
+    margin-bottom: 30px;
+}
+
+.date-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 25px; /* نفس استدارة البحث في الهيدر */
+    font-size: 14px;
+    background: white;
+    direction: rtl;
+    color: #495057;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #5cb85c;
+    box-shadow: 0 0 0 3px rgba(92, 184, 92, 0.1);
+}
+
+.date-input::placeholder {
+    color: #adb5bd;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Property Grid */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Property Card */
+.property-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #f1f3f4;
+}
+
+.property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    border-color: #5cb85c;
+}
+
+.property-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.08);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.property-type {
+    background: linear-gradient(135deg, #5cb85c, #4cae4c);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(92, 184, 92, 0.3);
+    font-family: 'Cairo', sans-serif;
+}
+
+.property-content {
+    padding: 25px;
+}
+
+.property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.property-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.4;
+    flex: 1;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+.period-badge {
+    padding: 5px 14px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: 'Cairo', sans-serif;
+}
+
+.period-badge.monthly {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.period-badge.weekly {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.period-badge.daily {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.property-description {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: justify;
+    font-family: 'Cairo', sans-serif;
+}
+
+.property-amenities {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+    padding: 18px 0;
+    border-top: 1px solid #f1f3f4;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #495057;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+}
+
+.amenity-icon {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.property-location {
+    color: #6c757d;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.location-text::before {
+    content: "📍";
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+/* Pagination - تتماشى مع ألوان الهيدر */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    background: white;
+    border: 1px solid #dee2e6;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+}
+
+.pagination-btn:hover {
+    background: #f8f9fa;
+    color: #495057;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pagination-btn.active {
+    background: #5cb85c; /* نفس لون الشعار */
+    color: white;
+    border-color: #5cb85c;
+    box-shadow: 0 4px 15px rgba(92, 184, 92, 0.3);
+}
+
+.pagination-btn.prev,
+.pagination-btn.next {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .main-content {
+        padding: 20px 0;
+    }
+    
+    .property-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .filter-tabs {
+        padding: 10px 0;
+        gap: 8px;
+    }
+    
+    .filter-tab {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+    
+    .property-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .property-amenities {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .date-input {
+        max-width: 100%;
+    }
+    
+    .pagination {
+        gap: 5px;
+    }
+    
+    .pagination-btn {
+        min-width: 42px;
+        height: 42px;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .property-content {
+        padding: 20px;
+    }
+    
+    .property-title {
+        font-size: 15px;
+    }
+    
+    .property-description {
+        font-size: 13px;
+    }
+    
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .filter-tab {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Animation for loading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.property-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.property-card:nth-child(1) { animation-delay: 0.1s; }
+.property-card:nth-child(2) { animation-delay: 0.2s; }
+.property-card:nth-child(3) { animation-delay: 0.3s; }
+.property-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Smooth transitions */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus states for accessibility */
+.filter-tab:focus,
+.pagination-btn:focus,
+.date-input:focus {
+    outline: 2px solid #5cb85c;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.property-grid.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.property-grid.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #5cb85c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* تأكد من عدم تداخل الأنماط مع الهيدر الموجود */
+.main-content .container {
+    /* إعادة تعريف الحاوية للمحتوى الرئيسي فقط */
+}

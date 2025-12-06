@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإيجار اليومي - شقق مفروشة للإيجار</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="dailyrent.css">
+    <link rel="stylesheet" href="dailyrent111111.css">
+    
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Right side - Logo and main actions -->
+                <div class="header-right">
+                   <div class="logo" style="display: flex; align-items: center;">
+
+     <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+   <!-- حاوية الشعار الرئيسية -->
+<div style="display: flex; align-items: center; gap: 8px;">
+
+    <!-- 1. حاوية أيقونة الخريطة (لوضع الأيقونة فوقها) -->
+    <div style="position: relative; width: 45px; height: 45px;">
+        
+        <!-- صورة الخريطة التي أضفتها -->
+        <img src="images/logo.webp" alt="خريطة سوريا" style="width: 100%; height: 100%;">
+
+        <!-- أيقونة الموقع (SVG) باللون الأبيض في المنتصف -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="#333" stroke-width="1.5">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+        </div>
+
+    </div>
+    <!-- الجزء الخاص بالنصوص (عقار و AQAR) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 24px; font-weight: 700; color: #82b85c;">AQAR</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #82b85c; letter-spacing: 1px;">SYRIA</span>
+    </div>
+
+</div>
+                    
+                    <div class="header-buttons">
+                        <button class="btn btn-outline">
+                            <span class="icon">+</span>
+                            إضافة
+                        </button>
+                        
+                 <button class="btn btn-outline">
+          <i class="fa-solid fa-map-location-dot" style="margin-left: 8px; color: #007bff;"></i>بحث بالخريطة
+                </button>
+                        
+                       <button class="btn btn-primary">
+    <i class="fa-solid fa-calendar-days" style="margin-left: 8px;"></i>الإيجار اليومي
+</button>
+                        
+                        <button class="btn btn-primary">
+                            العودة لعقار
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Left side - User and search -->
+                <div class="header-left">
+                   <div class="search-box" style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 25px; padding: 5px 15px; background-color: #f5f5f5;">
+    <input type="search" placeholder="بحث" class="search-input" style="border: none; outline: none; flex-grow: 1; background: transparent; font-family: 'Cairo', sans-serif; font-size: 16px;">
+    <button class="search-button" style="border: none; background: transparent; cursor: pointer; padding: 0; margin-right: 5px;">
+        <i class="fa-solid fa-magnifying-glass" style="color: #888; font-size: 16px;"></i>
+    </button>
+</div>
+                    
+         <a href="person1.html" class="btn btn-ghost">
+    <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+      <main class="main-content">
+        <div class="container">
+     <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">الكل</button>
+                <button class="filter-tab" data-category="apartments">شقق مفروشة للحجز</button>
+                <button class="filter-tab" data-category="villas">فلل مفروشة للحجز</button>
+                <button class="filter-tab" data-category="chalets">شاليهات واستراحات للحجز</button>
+                <button class="filter-tab" data-category="camps">مخيمات للحجز</button>
+                <button class="filter-tab" data-category="farms">مزارع للحجز</button>
+                <button class="filter-tab" data-category="halls">قاعات للحجز</button>
+            </div>
+           </div>
+           </main>
+
+
+
+
+
+            <div class="booking-container">
+        <!-- Header Section -->
+        <div class="booking-header">
+            <h3 class="booking-title">الرجاء إختيار فترة الحجز لعرض الأسعار</h3>
+            <div class="property-info">
+                <div class="property-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>عقار مميز</span>
+                </div>
+                <p class="property-description">
+                    شقة VIP فاخرة للإيجار الشهري تتكون من: - 4 غرفة نوم (7 أشخاص) منها غرفة رئيسية -3- خزانات ملابس -
+                    مطبخ بثلاجة وغسالة ملابس -عيون طبخ غاز وفرن كهربائي - شاشة 65 بوصة سوني - سطح صغير - صالة واسعة... المزيد
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="booking-content">
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <button class="nav-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h3 class="calendar-title">سبتمبر 2025</h3>
+                    <button class="nav-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="calendar-header-row">
+                        <div class="day-header">أح</div>
+                        <div class="day-header">إث</div>
+                        <div class="day-header">ث</div>
+                        <div class="day-header">أر</div>
+                        <div class="day-header">خ</div>
+                        <div class="day-header">ج</div>
+                        <div class="day-header">س</div>
+                    </div>
+
+                    <div class="calendar-body">
+                        <!-- Week 1 -->
+                        <div class="calendar-row">
+                            <div class="day-cell other-month">31</div>
+                            <div class="day-cell">1</div>
+                            <div class="day-cell">2</div>
+                            <div class="day-cell">3</div>
+                            <div class="day-cell">4</div>
+                            <div class="day-cell">5</div>
+                            <div class="day-cell">6</div>
+                        </div>
+
+                        <!-- Week 2 -->
+                        <div class="calendar-row">
+                            <div class="day-cell">7</div>
+                            <div class="day-cell">8</div>
+                            <div class="day-cell">9</div>
+                            <div class="day-cell">10</div>
+                            <div class="day-cell">11</div>
+                            <div class="day-cell">12</div>
+                            <div class="day-cell">13</div>
+                        </div>
+
+                        <!-- Week 3 -->
+                        <div class="calendar-row">
+                            <div class="day-cell">14</div>
+                            <div class="day-cell">15</div>
+                            <div class="day-cell">16</div>
+                            <div class="day-cell">17</div>
+                            <div class="day-cell">18</div>
+                            <div class="day-cell">19</div>
+                            <div class="day-cell">20</div>
+                        </div>
+
+                        <!-- Week 4 -->
+                        <div class="calendar-row">
+                            <div class="day-cell">21</div>
+                            <div class="day-cell">22</div>
+                            <div class="day-cell">23</div>
+                            <div class="day-cell">24</div>
+                            <div class="day-cell">25</div>
+                            <div class="day-cell">26</div>
+                            <div class="day-cell">27</div>
+                        </div>
+
+                        <!-- Week 5 -->
+                        <div class="calendar-row">
+                            <div class="day-cell available">28</div>
+                            <div class="day-cell available">29</div>
+                            <div class="day-cell available">30</div>
+                            <div class="day-cell available">1</div>
+                            <div class="day-cell available">2</div>
+                            <div class="day-cell available">3</div>
+                            <div class="day-cell">4</div>
+                        </div>
+
+                        <!-- Week 6 -->
+                        <div class="calendar-row">
+                            <div class="day-cell available">5</div>
+                            <div class="day-cell available">6</div>
+                            <div class="day-cell available">7</div>
+                            <div class="day-cell available">8</div>
+                            <div class="day-cell available">9</div>
+                            <div class="day-cell available">10</div>
+                            <div class="day-cell">11</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="book-unit-btn">حجز الوحدة</button>
+                <div class="report-link">
+                    <i class="fas fa-flag"></i>
+                    <span>إبلاغ على الإعلان</span>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="details-section">
+                <h3 class="details-title">التفاصيل</h3>
+                
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>عمر العقار</span>
+                        </div>
+                        <div class="detail-value">سنة</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-building"></i>
+                            <span>الدور</span>
+                        </div>
+                        <div class="detail-value">علوي</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-shower"></i>
+                            <span>دورات المياه</span>
+                        </div>
+                        <div class="detail-value">3</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-users"></i>
+                            <span>الصالات</span>
+                        </div>
+                        <div class="detail-value">1</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-bed"></i>
+                            <span>غرف النوم</span>
+                        </div>
+                        <div class="detail-value">4</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-utensils"></i>
+                            <span>المطبخ</span>
+                        </div>
+                        <div class="detail-value">عوائل</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <span>المساحة</span>
+                        </div>
+                        <div class="detail-value">180م²</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-home"></i>
+                            <span>الفئة</span>
+                        </div>
+                        <div class="detail-value">كاملة</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">
+                            <i class="fas fa-road"></i>
+                            <span>عرض الشارع</span>
+                        </div>
+                        <div class="detail-value">15م</div>
+                    </div>
+                </div>
+
+                <h3 class="features-title">المميزات</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>مكيف</span>
+                    </div>
+                </div>
+
+                <h3 class="unit-rules-title">قوانين الوحدة</h3>
+                <div class="unit-rules">
+                    <div class="rule-item">
+                        <div class="rule-label">وقت الوصول</div>
+                        <div class="rule-value">04:00 م</div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-label">وقت المغادرة</div>
+                        <div class="rule-value">12:00 م</div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-label">الحد الأدنى للحجز</div>
+                        <div class="rule-value">3 يوم</div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-label">إمكانية إلغاء الحجز</div>
+                        <div class="rule-value">غير مسترد</div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-label">مبلغ التأمين</div>
+                        <div class="rule-value">2,000 ﷼</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+     <div class="page-container">
+        
+        <!-- 1. بانر الخصم (بالتصميم الجديد ) -->
+        <div class="discount-banner">
+            <!-- ✅ الجزء الجديد: صورة على اليمين -->
+            <div class="banner-image">
+                <img src="images/29.webp" alt="صورة المسبح">
+            </div>
+            <!-- ✅ الجزء الجديد: النص على اليسار -->
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>خصم 15%</h2>
+                    <p>على الحجوزات اليومية والشهرية</p>
+                </div>
+                <div class="promo-code">
+                    <span>استخدم كود:</span>
+                    <span class="code">(B15 )</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. قسم الخريطة (الخريطة التفاعلية) -->
+        <div class="map-section">
+            <!-- ✅ تم استبدال الصورة بكود تضمين الخريطة -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57994.89448387979!2d46.62388704158934!3d24.76129911956075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c97e7418!2z2KfZhNmE2YjZitin2K_YqSDYp9mE2LPYp9mE2YXYqti02K_YqQ!5e0!3m2!1sar!2ssa!4v1695832681305!5m2!1sar!2ssa" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- 3. قسم معلومات الإعلان (يبقى كما هو ) -->
+        <div class="info-section">
+            <h4>معلومات الإعلان</h4>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>رقم الإعلان</span>
+                    <strong>5109593</strong>
+                </div>
+                <div class="info-item">
+                    <span>رقم الترخيص</span>
+                    <div class="license-number">
+                        <strong>50013252</strong>
+                        <button class="copy-btn">
+                            <i class="far fa-copy"></i>
+                            <span>نسخ</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. أزرار التنقل (تبقى كما هي) -->
+        <div class="ad-navigation">
+            <a href="#" class="nav-button prev">
+                <i class="fas fa-chevron-right"></i>
+                <span>الإعلان السابق</span>
+            </a>
+            <a href="#" class="nav-button next">
+                <span>الإعلان التالي</span>
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+            <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">روابط سريعة</h3>
+                     <div class="search-columns">
+                        <div class="search-column">
+    <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-bullhorn" style="margin-left: 8px; color: #ffc107;"></i>تمييز الإعلانات</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-newspaper" style="margin-left: 8px; color: #17a2b8;"></i>مدونة عقار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-handshake" style="margin-left: 8px; color: #28a745;"></i>شركاء النجاح</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-contract" style="margin-left: 8px; color: #6c757d;"></i>اتفاقية الاستخدام</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-calculator" style="margin-left: 8px; color: #fd7e14;"></i>حاسبة البناء</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-comments" style="margin-left: 8px; color: #007bff;"></i>اتصل بنا</a></li>
+</ul>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- Additional Links Section -->
+                <div class="footer-section">
+                    <div class="additional-links">
+                        <div class="search-columns">
+                        <div class="search-column">
+                       <div>
+                        <br>
+                        <br> <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-plus" style="margin-left: 8px; color: #28a745;"></i>إضافة إعلان</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-money-bill-wave" style="margin-left: 8px; color: #198754;"></i>دفع الرسوم</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-chart-line" style="margin-left: 8px; color: #0d6efd;"></i>متوسط الأسعار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-signature" style="margin-left: 8px; color: #6f42c1;"></i>عقود الإيجار</a></li>
+</ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Search Options Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">خيارات البحث</h3>
+                    <div class="search-columns">
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للبيع</a></li>
+                                <li><a href="#" class="footer-link">• أراضي للبيع</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بالرياض</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بجدة</a></li>
+                            </ul>
+                        </div>
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• دور للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للبيع</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo and Apps Section -->
+                <div class="footer-section logo-section">
+                 
+                  <div class="footer-logo-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+    <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+    <div class="logo-icon-group" style="position: relative; margin-bottom: 15px;">
+        <!-- أيقونة الخريطة كخلفية -->
+        <i class="fa-solid fa-map" style="font-size: 42px; color: #5cb85c;"></i>
+        <!-- أيقونة دبوس الموقع فوق الخريطة -->
+        <i class="fa-solid fa-map-pin" style="font-size: 20px; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+    </div>
+
+    <!-- الجزء الخاص بالنصوص (عقار, AQAR, والشعار) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; align-items: center; line-height: 1.4;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 28px; font-weight: 700; color: #5cb85c;">عَقَار</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #5cb85c; letter-spacing: 1px; margin-top: -5px;">AQAR</span>
+        <p class="logo-description" style="font-family: 'Cairo', sans-serif; font-size: 16px; color: #565555; margin-top: 10px;">معك في رحلة العمر</p><br>
+    </div>
+
+</div>
+                     
+                   
+                    
+                    <div class="app-downloads">
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcEdhbGxlcnk8L3RleHQ+PHRleHQgeD0iNjAiIHk9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI0ZGNTc1NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SFVBV0VJPC90ZXh0Pjwvc3ZnPg==" alt="AppGallery">
+                        </a>
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcCBTdG9yZTwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+NjzwvdGV4dD48L3N2Zz4=" alt="App Store">
+                        </a>
+                       <a href="#" class="app-link">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="40" rx="5" fill="#000"/>
+        <text x="60" y="15" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Google Play</text>
+        <text x="60" y="30" font-family="Arial" font-size="14" fill="#4CAF50" text-anchor="middle">▶</text>
+    </svg>
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+               <div class="certifications" style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 20px; padding: 20px; border-top: 1px solid #eee;">
+
+    <!-- شهادة VAT المحدثة -->
+    <div class="vat-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="vat-icon" style="width: 60px; height: 40px; background-color: #0056b3; color: white; display: flex; justify-content: center; align-items: center; border-radius: 5px; font-family: 'Cairo', sans-serif; font-weight: bold; font-size: 14px;">
+            VAT
+        </div>
+        <span style="font-size: 12px; color: #888;">شهادة الضريبة</span>
+    </div>
+
+    <!-- خدمة التوثيق السريع المحدثة -->
+    <div class="ministry-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="ministry-icon" style="width: 40px; height: 40px; background-color: #28a745; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+            <i class="fa-solid fa-shield-halved" style="font-size: 20px;"></i>
+        </div>
+        <span class="ministry-text" style="font-size: 14px; color: #333; font-weight: 600;">خدمة التوثيق السريع</span>
+    </div>
+
+</div>
+
+              <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+    <a href="#" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Snapchat"><i class="fa-brands fa-snapchat" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="YouTube"><i class="fa-brands fa-youtube" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="X (Twitter)"><i class="fa-brands fa-twitter" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f" style="font-size: 22px; color: #555;"></i></a>
+</div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="copyright">
+                <p>كافة الحقوق محفوظة لتطبيق عقار 2025</p>
+                <p>شركة تطبيق عقار مرخصة من وزارة الإسكان برقم 73106505</p>
+            </div>
+        </div>
+    </footer>
+
+             <script src="footer-script.js"></script>
+     <script src="script.js"></script>
+    <script src="dailyrent.js"></script>
+    <script src="dailyrent111111.js"></script>
+</body>
+</html>

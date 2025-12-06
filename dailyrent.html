@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإيجار اليومي - شقق مفروشة للإيجار</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="dailyrent.css">
+    <style>
+        .property-card-link {
+    text-decoration: none; /* لإزالة الخط تحت الرابط */
+    color: inherit;       /* لجعل النص يرث لونه الأصلي */
+    display: block;       /* لجعل الرابط يحتل كامل عرض الحاوية */
+}
+
+/* (اختياري) إضافة تأثير بسيط عند مرور الماوس فوق البطاقة */
+.property-card-link:hover .property-card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Right side - Logo and main actions -->
+                <div class="header-right">
+                   <div class="logo" style="display: flex; align-items: center;">
+
+     <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+   <!-- حاوية الشعار الرئيسية -->
+<div style="display: flex; align-items: center; gap: 8px;">
+
+    <!-- 1. حاوية أيقونة الخريطة (لوضع الأيقونة فوقها) -->
+    <div style="position: relative; width: 45px; height: 45px;">
+        
+        <!-- صورة الخريطة التي أضفتها -->
+        <img src="images/logo.webp" alt="خريطة سوريا" style="width: 100%; height: 100%;">
+
+        <!-- أيقونة الموقع (SVG) باللون الأبيض في المنتصف -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="#333" stroke-width="1.5">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+        </div>
+
+    </div>
+    <!-- الجزء الخاص بالنصوص (عقار و AQAR) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 24px; font-weight: 700; color: #82b85c;">AQAR</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #82b85c; letter-spacing: 1px;">SYRIA</span>
+    </div>
+
+</div>
+                    
+                    <div class="header-buttons">
+                        <button class="btn btn-outline">
+                            <span class="icon">+</span>
+                            إضافة
+                        </button>
+                        
+                 <button class="btn btn-outline">
+          <i class="fa-solid fa-map-location-dot" style="margin-left: 8px; color: #007bff;"></i>بحث بالخريطة
+                </button>
+                        
+                       <button class="btn btn-primary">
+    <i class="fa-solid fa-calendar-days" style="margin-left: 8px;"></i>الإيجار اليومي
+</button>
+                        
+                        <button class="btn btn-primary">
+                            العودة لعقار
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Left side - User and search -->
+                <div class="header-left">
+                   <div class="search-box" style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 25px; padding: 5px 15px; background-color: #f5f5f5;">
+    <input type="search" placeholder="بحث" class="search-input" style="border: none; outline: none; flex-grow: 1; background: transparent; font-family: 'Cairo', sans-serif; font-size: 16px;">
+    <button class="search-button" style="border: none; background: transparent; cursor: pointer; padding: 0; margin-right: 5px;">
+        <i class="fa-solid fa-magnifying-glass" style="color: #888; font-size: 16px;"></i>
+    </button>
+</div>
+                    
+         <a href="person1.html" class="btn btn-ghost">
+    <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي - يبدأ من تحت الهيدر مباشرة -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <span>عقارات</span>
+                <span class="separator">‹</span>
+                <span>الإيجار اليومي</span>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">الكل</button>
+                <button class="filter-tab" data-category="apartments">شقق مفروشة للحجز</button>
+                <button class="filter-tab" data-category="villas">فلل مفروشة للحجز</button>
+                <button class="filter-tab" data-category="chalets">شاليهات واستراحات للحجز</button>
+                <button class="filter-tab" data-category="camps">مخيمات للحجز</button>
+                <button class="filter-tab" data-category="farms">مزارع للحجز</button>
+                <button class="filter-tab" data-category="halls">قاعات للحجز</button>
+            </div>
+
+            <!-- Date and Location Filter -->
+            <div class="date-location-filter">
+                <input type="text" placeholder="اختر تاريخ الوصول و الخروج..." class="date-input">
+            </div>
+
+            <!-- Property Listings Grid -->
+            <div class="property-grid" id="propertyGrid">
+           <!-- بداية الرابط الذي يغلف البطاقة بالكامل -->
+    <a href="dailyrent111111.html" class="property-card-link">
+
+    <!-- Property Card 1 (الكود الأصلي الخاص بك بدون تغيير) -->
+    <div class="property-card" data-category="apartments">
+        <div class="property-image">
+            <img src="images/101.webp" alt="استديو مفروش">
+            <div class="image-overlay">
+                <span class="property-type">حجز يومي</span>
+            </div>
+        </div>
+        <div class="property-content">
+            <div class="property-header">
+                <h3 class="property-title">استديو مفروش للحجز في شارع ، حي الحمراء، </h3>
+                <span class="period-badge monthly">شهري</span>
+            </div>
+            <p class="property-description">
+                غرفة سويت عرقة نوم دورة مياه صالة مطبخ بلكونة جديدة مكيفة شامل انت التاجير شهري فقط اقل مده 30 يوم 2700
+            </p>
+            <div class="property-amenities">
+                <!-- أيقونة السرير (غرف النوم) -->
+                <div class="amenity">
+                    <span class="amenity-icon" style="color: #3498db;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                            <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        </svg>
+                    </span>
+                    <span>1</span>
+                </div>
+                <!-- أيقونة الدش (دورات المياه ) -->
+                <div class="amenity">
+                    <span class="amenity-icon" style="color: #1abc9c;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                            <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                            <path d="M12 15v6" />
+                        </svg>
+                    </span>
+                    <span>1</span>
+                </div>
+                <!-- أيقونة المساحة -->
+                <div class="amenity">
+                    <span class="amenity-icon" style="color: #e67e22;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                            <path d="M4 9l16 0" />
+                            <path d="M9 4l0 16" />
+                        </svg>
+                    </span>
+                    <span>70 م²</span>
+                </div>
+            </div>
+            <div class="property-location">
+                <span class="location-text">حي الحمراء، </span>
+            </div>
+        </div>
+    </div>
+
+</a> <!-- نهاية الرابط الذي يغلف البطاقة -->
+                <a href="dailyrent111111.html" class="property-card-link">
+    <!-- Property Card 1 -->
+                <div class="property-card" data-category="hall">
+                    <div class="property-image">
+                        <img src="images/101.webp" alt="قاعات ">
+                        <div class="image-overlay">
+                            <span class="property-type">حجز يومي</span>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">قاعات مفروش للحجز في شارع ، حي الحمراء،  </h3>
+                            <span class="period-badge monthly">شهري</span>
+                        </div>
+                        <p class="property-description">
+                            غرفة سويت عرقة نوم دورة مياه صالة مطبخ بلكونة جديدة مكيفة شامل انت التاجير شهري فقط اقل مده 30 يوم 2700
+                        </p>
+                       <div class="property-amenities">
+    <!-- أيقونة السرير (غرف النوم) - باللون الأزرق الهادئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #3498db;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة الدش (دورات المياه ) - باللون الفيروزي -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #1abc9c;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                <path d="M12 15v6" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة المساحة - باللون البرتقالي الدافئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #e67e22;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                <path d="M4 9l16 0" />
+                <path d="M9 4l0 16" />
+            </svg>
+        </span>
+        <span>70 م²</span>
+    </div>
+</div>
+                        <div class="property-location">
+                            <span class="location-text">حي الحمراء،  </span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="dailyrent111111.html" class="property-card-link">
+                <!-- Property Card 2 -->
+                <div class="property-card" data-category="villa">
+                    <div class="property-image">
+                        <img src="images/108.webp" alt="فلة ">
+                        <div class="image-overlay">
+                            <span class="property-type">حجز يومي</span>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">فلة مفروشة للحجز في شارع أبي الحسن  حي عرقة،  منطقة حلب</h3>
+                            <span class="period-badge weekly">اسبوعي</span>
+                        </div>
+                        <p class="property-description">
+                            شقة فاخرة مفروشة بقرب من ممشى الحديد مكونة من صالة واسعة ومطبخ وغرفة نوم بمساحة اجمالي اكثر من 80 متر الشقة فيها انترنت مجاني وشاشة 75 انش ودخول ذاتي يحي عرقة الذي يعتبر حي من أحياء المركزية بحلب...
+                        </p>
+                        <div class="property-amenities">
+    <!-- أيقونة السرير (غرف النوم) - باللون الأزرق الهادئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #3498db;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة الدش (دورات المياه ) - باللون الفيروزي -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #1abc9c;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                <path d="M12 15v6" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة المساحة - باللون البرتقالي الدافئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #e67e22;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                <path d="M4 9l16 0" />
+                <path d="M9 4l0 16" />
+            </svg>
+        </span>
+        <span>70 م²</span>
+    </div>
+</div>
+                        <div class="property-location">
+                            <span class="location-text">حي عرقة، حماة منطقة </span>
+                        </div>
+                    </div>
+                </div>
+               </a>
+               <a href="dailyrent111111.html" class="property-card-link">
+                <div class="property-card" data-category="camp">
+                    <div class="property-image">
+                        <img src="images/108.webp" alt="مخيمات ">
+                        <div class="image-overlay">
+                            <span class="property-type">حجز يومي</span>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">مخيمات  للحجز في شارع أبي الحسن  حي عرقة،  منطقة حلب</h3>
+                            <span class="period-badge weekly">اسبوعي</span>
+                        </div>
+                        <p class="property-description">
+                            شقة فاخرة مفروشة بقرب من ممشى الحديد مكونة من صالة واسعة ومطبخ وغرفة نوم بمساحة اجمالي اكثر من 80 متر الشقة فيها انترنت مجاني وشاشة 75 انش ودخول ذاتي يحي عرقة الذي يعتبر حي من أحياء المركزية بحلب...
+                        </p>
+                       <div class="property-amenities">
+    <!-- أيقونة السرير (غرف النوم) - باللون الأزرق الهادئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #3498db;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة الدش (دورات المياه ) - باللون الفيروزي -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #1abc9c;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                <path d="M12 15v6" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة المساحة - باللون البرتقالي الدافئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #e67e22;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                <path d="M4 9l16 0" />
+                <path d="M9 4l0 16" />
+            </svg>
+        </span>
+        <span>70 م²</span>
+    </div>
+</div>
+                        <div class="property-location">
+                            <span class="location-text">حي عرقة، حماة منطقة </span>
+                        </div>
+                    </div>
+                </div>
+               </a>
+               <a href="dailyrent111111.html" class="property-card-link">
+                <!-- Property Card 3 -->
+                <div class="property-card" data-category="chalets">
+                    <div class="property-image">
+                        <img src="images/106.webp" alt="شاليهات ">
+                        <div class="image-overlay">
+                            <span class="property-type">حجز يومي</span>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">شاليهات  للحجز في شارع رقم 572، حي الملقا، الشام </h3>
+                            <span class="period-badge daily">يومي</span>
+                        </div>
+                        <p class="property-description">
+                            شقة VIP فاخرة للايجار الشهري تتكون من 4 غرف نوم (7 اسرة) منها غرفة رئيسية 3- خزائن ملابس مطبخ مجهز بالكامل وثلاجة وغسالة ملابس "عدون طبخ غاز وفرن كهربائي - شاشة 65 وصة تيوي - سطح صغير - صالة واسعة -طاولة طعام ...
+                        </p>
+                        <div class="property-amenities">
+    <!-- أيقونة السرير (غرف النوم) - باللون الأزرق الهادئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #3498db;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة الدش (دورات المياه ) - باللون الفيروزي -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #1abc9c;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                <path d="M12 15v6" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة المساحة - باللون البرتقالي الدافئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #e67e22;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                <path d="M4 9l16 0" />
+                <path d="M9 4l0 16" />
+            </svg>
+        </span>
+        <span>70 م²</span>
+    </div>
+</div>
+                        <div class="property-location">
+                            <span class="location-text">حي الملقا، حمص </span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="dailyrent111111.html" class="property-card-link">
+                <!-- Property Card 3 -->
+                <div class="property-card" data-category="farm">
+                    <div class="property-image">
+                        <img src="images/106.webp" alt="مزارع ">
+                        <div class="image-overlay">
+                            <span class="property-type">حجز يومي</span>
+                        </div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <h3 class="property-title">مزارع  للحجز في شارع رقم 572، حي الملقا، الشام </h3>
+                            <span class="period-badge daily">يومي</span>
+                        </div>
+                        <p class="property-description">
+                            شقة VIP فاخرة للايجار الشهري تتكون من 4 غرف نوم (7 اسرة) منها غرفة رئيسية 3- خزائن ملابس مطبخ مجهز بالكامل وثلاجة وغسالة ملابس "عدون طبخ غاز وفرن كهربائي - شاشة 65 وصة تيوي - سطح صغير - صالة واسعة -طاولة طعام ...
+                        </p>
+                       <div class="property-amenities">
+    <!-- أيقونة السرير (غرف النوم) - باللون الأزرق الهادئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #3498db;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
+                <path d="M7 10m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة الدش (دورات المياه ) - باللون الفيروزي -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #1abc9c;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-12.1 12.1l.7 -.7m12.1 .7l-.7 -.7" />
+                <path d="M16.95 11a3.95 3.95 0 0 0 -3.95 -3.95a3.95 3.95 0 0 0 -3.95 3.95c0 2.18 1.77 3.95 3.95 3.95" />
+                <path d="M12 15v6" />
+            </svg>
+        </span>
+        <span>1</span>
+    </div>
+    
+    <!-- أيقونة المساحة - باللون البرتقالي الدافئ -->
+    <div class="amenity">
+        <span class="amenity-icon" style="color: #e67e22;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+                <path d="M4 9l16 0" />
+                <path d="M9 4l0 16" />
+            </svg>
+        </span>
+        <span>70 م²</span>
+    </div>
+</div>
+                        <div class="property-location">
+                            <span class="location-text">حي الملقا، حمص </span>
+                        </div>
+                    </div>
+                 
+                </div>
+             </a>
+            
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn prev" id="prevBtn">«</button>
+                <button class="pagination-btn" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+                <button class="pagination-btn" data-page="3">3</button>
+                <button class="pagination-btn" data-page="4">4</button>
+                <button class="pagination-btn active" data-page="5">5</button>
+                <button class="pagination-btn next" id="nextBtn">»</button>
+            </div>
+        </div>
+    </main>
+
+    
+     <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">روابط سريعة</h3>
+                     <div class="search-columns">
+                        <div class="search-column">
+    <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-bullhorn" style="margin-left: 8px; color: #ffc107;"></i>تمييز الإعلانات</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-newspaper" style="margin-left: 8px; color: #17a2b8;"></i>مدونة عقار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-handshake" style="margin-left: 8px; color: #28a745;"></i>شركاء النجاح</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-contract" style="margin-left: 8px; color: #6c757d;"></i>اتفاقية الاستخدام</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-calculator" style="margin-left: 8px; color: #fd7e14;"></i>حاسبة البناء</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-comments" style="margin-left: 8px; color: #007bff;"></i>اتصل بنا</a></li>
+</ul>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- Additional Links Section -->
+                <div class="footer-section">
+                    <div class="additional-links">
+                        <div class="search-columns">
+                        <div class="search-column">
+                       <div>
+                        <br>
+                        <br> <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-plus" style="margin-left: 8px; color: #28a745;"></i>إضافة إعلان</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-money-bill-wave" style="margin-left: 8px; color: #198754;"></i>دفع الرسوم</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-chart-line" style="margin-left: 8px; color: #0d6efd;"></i>متوسط الأسعار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-signature" style="margin-left: 8px; color: #6f42c1;"></i>عقود الإيجار</a></li>
+</ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Search Options Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">خيارات البحث</h3>
+                    <div class="search-columns">
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للبيع</a></li>
+                                <li><a href="#" class="footer-link">• أراضي للبيع</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بالرياض</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بجدة</a></li>
+                            </ul>
+                        </div>
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• دور للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للبيع</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo and Apps Section -->
+                <div class="footer-section logo-section">
+                 
+                  <div class="footer-logo-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+    <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+    <div class="logo-icon-group" style="position: relative; margin-bottom: 15px;">
+        <!-- أيقونة الخريطة كخلفية -->
+        <i class="fa-solid fa-map" style="font-size: 42px; color: #5cb85c;"></i>
+        <!-- أيقونة دبوس الموقع فوق الخريطة -->
+        <i class="fa-solid fa-map-pin" style="font-size: 20px; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+    </div>
+
+    <!-- الجزء الخاص بالنصوص (عقار, AQAR, والشعار) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; align-items: center; line-height: 1.4;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 28px; font-weight: 700; color: #5cb85c;">عَقَار</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #5cb85c; letter-spacing: 1px; margin-top: -5px;">AQAR</span>
+        <p class="logo-description" style="font-family: 'Cairo', sans-serif; font-size: 16px; color: #565555; margin-top: 10px;">معك في رحلة العمر</p><br>
+    </div>
+
+</div>
+                     
+                   
+                    
+                    <div class="app-downloads">
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcEdhbGxlcnk8L3RleHQ+PHRleHQgeD0iNjAiIHk9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI0ZGNTc1NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SFVBV0VJPC90ZXh0Pjwvc3ZnPg==" alt="AppGallery">
+                        </a>
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcCBTdG9yZTwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+NjzwvdGV4dD48L3N2Zz4=" alt="App Store">
+                        </a>
+                       <a href="#" class="app-link">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="40" rx="5" fill="#000"/>
+        <text x="60" y="15" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Google Play</text>
+        <text x="60" y="30" font-family="Arial" font-size="14" fill="#4CAF50" text-anchor="middle">▶</text>
+    </svg>
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+               <div class="certifications" style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 20px; padding: 20px; border-top: 1px solid #eee;">
+
+    <!-- شهادة VAT المحدثة -->
+    <div class="vat-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="vat-icon" style="width: 60px; height: 40px; background-color: #0056b3; color: white; display: flex; justify-content: center; align-items: center; border-radius: 5px; font-family: 'Cairo', sans-serif; font-weight: bold; font-size: 14px;">
+            VAT
+        </div>
+        <span style="font-size: 12px; color: #888;">شهادة الضريبة</span>
+    </div>
+
+    <!-- خدمة التوثيق السريع المحدثة -->
+    <div class="ministry-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="ministry-icon" style="width: 40px; height: 40px; background-color: #28a745; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+            <i class="fa-solid fa-shield-halved" style="font-size: 20px;"></i>
+        </div>
+        <span class="ministry-text" style="font-size: 14px; color: #333; font-weight: 600;">خدمة التوثيق السريع</span>
+    </div>
+
+</div>
+
+              <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+    <a href="#" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Snapchat"><i class="fa-brands fa-snapchat" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="YouTube"><i class="fa-brands fa-youtube" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="X (Twitter)"><i class="fa-brands fa-twitter" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f" style="font-size: 22px; color: #555;"></i></a>
+</div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="copyright">
+                <p>كافة الحقوق محفوظة لتطبيق عقار 2025</p>
+                <p>شركة تطبيق عقار مرخصة من وزارة الإسكان برقم 73106505</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="footer-script.js"></script>
+     <script src="script.js"></script>
+    <script src="dailyrent.js"></script>
+</body>
+</html>

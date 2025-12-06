@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار تشخيصي للـ Modal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="add-property.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .debug {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .debug button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+        }
+        .debug button:hover {
+            background: #0056b3;
+        }
+        .log {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug">
+        <h2>🧪 تشخيص النموذج</h2>
+        <button onclick="testOpenModal()">1️⃣ فتح النموذج</button>
+        <button onclick="testSelectType()">2️⃣ اختر نوع عقار</button>
+        <button onclick="testUploadImage()">3️⃣ ارفع صورة</button>
+        <button onclick="testClickNext()">4️⃣ اضغط التالي</button>
+        <button onclick="clearLog()">🗑️ مسح</button>
+        <div class="log" id="log"></div>
+    </div>
+
+    <!-- Modal من index.html -->
+    <div class="add-property-modal" id="addPropertyModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>إضافة عقار جديد</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-step active">
+                    <span class="step-number">1</span>
+                    <span class="step-label">نوع العقار</span>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step">
+                    <span class="step-number">2</span>
+                    <span class="step-label">البيانات</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <span class="step-number">3</span>
+                    <span class="step-label">التأكيد</span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-section">
+                    <h3>ما نوع العقار الذي تريد إضافته؟</h3>
+                    <div class="property-types-grid">
+                        <div class="property-type-card" data-type="house">
+                            <div class="type-icon"><i class="fas fa-home"></i></div>
+                            <span>بيت للبيع</span>
+                        </div>
+                        <div class="property-type-card" data-type="apartment">
+                            <div class="type-icon"><i class="fas fa-building"></i></div>
+                            <span>شقة سكنية</span>
+                        </div>
+                        <div class="property-type-card" data-type="villa">
+                            <div class="type-icon"><i class="fas fa-gopuram"></i></div>
+                            <span>فيلا</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>رفع صور العقار</h3>
+                    <div class="upload-container">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <p class="upload-text">اسحب الصور هنا أو انقر للاختيار</p>
+                            <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                        </div>
+                        <div class="images-preview" id="imagesPreview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBtn">إلغاء</button>
+                <button class="btn btn-primary" id="nextBtn" disabled>التالي</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="add-property.js"></script>
+    <script>
+        function log(msg) {
+            const logEl = document.getElementById('log');
+            const time = new Date().toLocaleTimeString('ar-SA');
+            console.log(`[${time}] ${msg}`);
+            logEl.innerHTML += `[${time}] ${msg}<br>`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+
+        let propertyManager;
+
+        function testOpenModal() {
+            log('🔵 فتح النموذج...');
+            if (!propertyManager) {
+                propertyManager = new AddPropertyManager();
+                log('✅ تم إنشاء المدير');
+            }
+            propertyManager.openModal();
+            log('✅ تم فتح النموذج');
+        }
+
+        function testSelectType() {
+            log('🏠 اختيار نوع عقار...');
+            if (!propertyManager) {
+                log('❌ لا يوجد مدير');
+                return;
+            }
+            
+            const card = document.querySelector('.property-type-card');
+            if (!card) {
+                log('❌ لا توجد بطاقة');
+                return;
+            }
+            
+            card.click();
+            log('✅ تم اختيار: ' + propertyManager.propertyData.type);
+        }
+
+        function testUploadImage() {
+            log('📸 رفع صورة وهمية...');
+            if (!propertyManager) {
+                log('❌ لا يوجد مدير');
+                return;
+            }
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 100;
+            canvas.height = 100;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#82b85c';
+            ctx.fillRect(0, 0, 100, 100);
+            
+            canvas.toBlob((blob) => {
+                const file = new File([blob], 'test.png', { type: 'image/png' });
+                propertyManager.handleImages([file]);
+                log('✅ تم رفع الصورة');
+                log('📊 عدد الصور: ' + propertyManager.propertyData.images.length);
+                log('🔘 حالة الزر: ' + (!document.getElementById('nextBtn').disabled ? 'مفعّل' : 'معطّل'));
+            });
+        }
+
+        function testClickNext() {
+            log('➡️ الضغط على التالي...');
+            if (!propertyManager) {
+                log('❌ لا يوجد مدير');
+                return;
+            }
+            
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn.disabled) {
+                log('❌ الزر معطّل');
+                return;
+            }
+            
+            propertyManager.nextStep();
+            log('✅ تم الضغط على التالي');
+        }
+
+        window.addEventListener('load', () => {
+            log('✅ الصفحة جاهزة');
+        });
+    </script>
+</body>
+</html>

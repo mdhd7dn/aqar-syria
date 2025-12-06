@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنضم إلى العقار</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="person1.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Right side - Logo and main actions -->
+                <div class="header-right">
+                   <div class="logo" style="display: flex; align-items: center;">
+
+  <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+   <!-- حاوية الشعار الرئيسية -->
+<div style="display: flex; align-items: center; gap: 8px;">
+
+    <!-- 1. حاوية أيقونة الخريطة (لوضع الأيقونة فوقها) -->
+    <div style="position: relative; width: 45px; height: 45px;">
+        
+        <!-- صورة الخريطة التي أضفتها -->
+        <img src="images/logo.webp" alt="خريطة سوريا" style="width: 100%; height: 100%;">
+
+        <!-- أيقونة الموقع (SVG) باللون الأبيض في المنتصف -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="#333" stroke-width="1.5">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+        </div>
+
+    </div>
+    <!-- الجزء الخاص بالنصوص (عقار و AQAR) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 24px; font-weight: 700; color: #82b85c;">AQAR</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #82b85c; letter-spacing: 1px;">SYRIA</span>
+    </div>
+
+</div>
+                    
+                    <div class="header-buttons">
+                        <button class="btn btn-outline">
+                            <span class="icon">+</span>
+                            إضافة
+                        </button>
+                        
+                 <button class="btn btn-outline">
+          <i class="fa-solid fa-map-location-dot" style="margin-left: 8px; color: #007bff;"></i>بحث بالخريطة
+                </button>
+                        
+         <a href="dailyrent.html" class="btn btn-primary" style="text-decoration: none;">
+    <i class="fa-solid fa-calendar-days" style="margin-left: 8px;"></i>الإيجار اليومي
+</a>
+                        
+                        <button class="btn btn-primary">
+                            العودة لعقار
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Left side - User and search -->
+                <div class="header-left">
+                   <div class="search-box" style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 25px; padding: 5px 15px; background-color: #f5f5f5;">
+    <input type="search" placeholder="بحث" class="search-input" style="border: none; outline: none; flex-grow: 1; background: transparent; font-family: 'Cairo', sans-serif; font-size: 16px;">
+    <button class="search-button" style="border: none; background: transparent; cursor: pointer; padding: 0; margin-right: 5px;">
+        <i class="fa-solid fa-magnifying-glass" style="color: #888; font-size: 16px;"></i>
+    </button>
+</div>
+                    
+         <a href="person1.html" class="btn btn-ghost">
+    <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <main class="login-section">
+    <div class="container">
+        <div class="form-container">
+            <h1 class="title">انضم إلى عقار</h1>
+            
+            <!-- أزرار التبديل -->
+            <div class="toggle-buttons">
+                <button id="loginBtn" class="toggle-btn active">تسجيل دخول</button>
+                <button id="signupBtn" class="toggle-btn">إنشاء حساب</button>
+            </div>
+
+            <!-- نموذج تسجيل الدخول -->
+            <div id="loginForm" class="form active">
+                <div class="input-group">
+                    <label for="loginPhone">رقم الجوال</label>
+                    <input type="tel" id="loginPhone" placeholder="...الرجاء كتابة رقم الجوال">
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">كلمة المرور</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" placeholder="الرجاء كتابة كلمة المرور...">
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="submit-btn">دخول</button>
+                
+                <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+            </div>
+
+            <!-- نموذج إنشاء الحساب -->
+            <div id="signupForm" class="form">
+                <div class="input-group">
+                    <label for="signupPhone">رقم الجوال</label>
+                    <input type="tel" id="signupPhone" placeholder="...الرجاء كتابة رقم الجوال">
+                </div>
+
+                <button class="submit-btn">إرسال رمز التحقق</button>
+            </div>
+        </div>
+    </div>
+    </main>
+  
+
+    <script src="script.js"></script>
+     <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">روابط سريعة</h3>
+                     <div class="search-columns">
+                        <div class="search-column">
+    <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-bullhorn" style="margin-left: 8px; color: #ffc107;"></i>تمييز الإعلانات</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-newspaper" style="margin-left: 8px; color: #17a2b8;"></i>مدونة عقار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-handshake" style="margin-left: 8px; color: #28a745;"></i>شركاء النجاح</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-contract" style="margin-left: 8px; color: #6c757d;"></i>اتفاقية الاستخدام</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-calculator" style="margin-left: 8px; color: #fd7e14;"></i>حاسبة البناء</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-comments" style="margin-left: 8px; color: #007bff;"></i>اتصل بنا</a></li>
+</ul>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- Additional Links Section -->
+                <div class="footer-section">
+                    <div class="additional-links">
+                        <div class="search-columns">
+                        <div class="search-column">
+                       <div>
+                        <br>
+                        <br> <ul class="footer-links">
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-plus" style="margin-left: 8px; color: #28a745;"></i>إضافة إعلان</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-money-bill-wave" style="margin-left: 8px; color: #198754;"></i>دفع الرسوم</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-chart-line" style="margin-left: 8px; color: #0d6efd;"></i>متوسط الأسعار</a></li>
+    <li><a href="#" class="footer-link"><i class="fa-solid fa-file-signature" style="margin-left: 8px; color: #6f42c1;"></i>عقود الإيجار</a></li>
+</ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Search Options Section -->
+                <div class="footer-section">
+                    <h3 class="section-title">خيارات البحث</h3>
+                    <div class="search-columns">
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للبيع</a></li>
+                                <li><a href="#" class="footer-link">• أراضي للبيع</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بالرياض</a></li>
+                                <li><a href="#" class="footer-link">• شقق للإيجار بجدة</a></li>
+                            </ul>
+                        </div>
+                        <div class="search-column">
+                            <ul class="footer-links">
+                                <li><a href="#" class="footer-link">• شقق للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• دور للإيجار</a></li>
+                                <li><a href="#" class="footer-link">• فلل للبيع</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo and Apps Section -->
+                <div class="footer-section logo-section">
+                 
+                  <div class="footer-logo-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+    <!-- الجزء الخاص بالأيقونات (الخريطة والدبوس) -->
+    <div class="logo-icon-group" style="position: relative; margin-bottom: 15px;">
+        <!-- أيقونة الخريطة كخلفية -->
+        <i class="fa-solid fa-map" style="font-size: 42px; color: #5cb85c;"></i>
+        <!-- أيقونة دبوس الموقع فوق الخريطة -->
+        <i class="fa-solid fa-map-pin" style="font-size: 20px; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+    </div>
+
+    <!-- الجزء الخاص بالنصوص (عقار, AQAR, والشعار) -->
+    <div class="logo-text-group" style="display: flex; flex-direction: column; align-items: center; line-height: 1.4;">
+        <span class="logo-main-text" style="font-family: 'Cairo', sans-serif; font-size: 28px; font-weight: 700; color: #5cb85c;">عَقَار</span>
+        <span class="logo-sub-text" style="font-family: 'Cairo', sans-serif; font-size: 14px; color: #5cb85c; letter-spacing: 1px; margin-top: -5px;">AQAR</span>
+        <p class="logo-description" style="font-family: 'Cairo', sans-serif; font-size: 16px; color: #565555; margin-top: 10px;">معك في رحلة العمر</p><br>
+    </div>
+
+</div>
+                     
+                   
+                    
+                    <div class="app-downloads">
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcEdhbGxlcnk8L3RleHQ+PHRleHQgeD0iNjAiIHk9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNiIgZmlsbD0iI0ZGNTc1NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SFVBV0VJPC90ZXh0Pjwvc3ZnPg==" alt="AppGallery">
+                        </a>
+                        <a href="#" class="app-link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNjAiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFwcCBTdG9yZTwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI2IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+NjzwvdGV4dD48L3N2Zz4=" alt="App Store">
+                        </a>
+                       <a href="#" class="app-link">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="120" height="40" rx="5" fill="#000"/>
+        <text x="60" y="15" font-family="Arial" font-size="8" fill="white" text-anchor="middle">Google Play</text>
+        <text x="60" y="30" font-family="Arial" font-size="14" fill="#4CAF50" text-anchor="middle">▶</text>
+    </svg>
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+               <div class="certifications" style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 20px; padding: 20px; border-top: 1px solid #eee;">
+
+    <!-- شهادة VAT المحدثة -->
+    <div class="vat-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="vat-icon" style="width: 60px; height: 40px; background-color: #0056b3; color: white; display: flex; justify-content: center; align-items: center; border-radius: 5px; font-family: 'Cairo', sans-serif; font-weight: bold; font-size: 14px;">
+            VAT
+        </div>
+        <span style="font-size: 12px; color: #888;">شهادة الضريبة</span>
+    </div>
+
+    <!-- خدمة التوثيق السريع المحدثة -->
+    <div class="ministry-cert" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="ministry-icon" style="width: 40px; height: 40px; background-color: #28a745; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+            <i class="fa-solid fa-shield-halved" style="font-size: 20px;"></i>
+        </div>
+        <span class="ministry-text" style="font-size: 14px; color: #333; font-weight: 600;">خدمة التوثيق السريع</span>
+    </div>
+
+</div>
+
+              <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+    <a href="#" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Snapchat"><i class="fa-brands fa-snapchat" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="YouTube"><i class="fa-brands fa-youtube" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="X (Twitter)"><i class="fa-brands fa-twitter" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in" style="font-size: 22px; color: #555;"></i></a>
+    <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f" style="font-size: 22px; color: #555;"></i></a>
+</div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="copyright">
+                <p>كافة الحقوق محفوظة لتطبيق عقار 2025</p>
+                <p>شركة تطبيق عقار مرخصة من وزارة الإسكان برقم 73106505</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="footer-script.js"></script>
+    <script src="person1.js"></script>
+    
+</body>
+</html>
